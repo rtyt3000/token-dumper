@@ -1,0 +1,20 @@
+{
+  "name": "token-dump",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "npx tsx src/index.ts"
+  },
+  "dependencies": {
+    "@mtcute/node": "^0.21.0",
+    "@types/node": "^22.13.1",
+    "commander": "^13.1.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.3"
+  },
+  "type": "module",
+  "private": true
+}
