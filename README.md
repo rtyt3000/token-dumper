@@ -1,4 +1,5 @@
 # Token Dumper
+[![wakatime](https://wakatime.com/badge/user/08bf60cd-1f17-4475-9eb0-d95c9b6cdf72/project/f3ccb06a-43cd-4343-82e0-09f3654c992d.svg)](https://wakatime.com/badge/user/08bf60cd-1f17-4475-9eb0-d95c9b6cdf72/project/f3ccb06a-43cd-4343-82e0-09f3654c992d)
 
 This is a tool for dump user from telegram bots based on [MTCute](https://mtcute.dev/)
 
