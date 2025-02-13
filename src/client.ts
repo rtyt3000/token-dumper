@@ -20,6 +20,8 @@ export class BotClient {
          await this._tg.start({botToken: token})
     }
 
+    getMe = async () => await this._tg.getMe()
+
     private _getUniqueSenders = async (messages: (Message | null)[]) => {
         const senders = new Set<number>()
         messages.forEach((message) => {
@@ -36,13 +38,15 @@ export class BotClient {
         return this._getUniqueSenders(messages)
     }
 
-    getUniqueSenders = async (messagesStep: number, messagesStepsCount: number) => {
+    getUniqueSenders = async (messagesStep: number, messagesStepsCount: number, timeout: number) => {
         const uniqueSenders = new Set<number>()
         for (const i of range(0, messagesStepsCount)) {
             const messagesSenders = await this.getUniqueSendersFromMessageId(i * messagesStep, (i + 1) * messagesStep)
             messagesSenders.forEach(sender => uniqueSenders.add(sender))
-            await sleep(1000)
+            await sleep(timeout)
+            console.log(`Step ${i + 1} of ${messagesStepsCount}`)
         }
+        console.log(`Total unique senders: ${uniqueSenders.size}`)
         return uniqueSenders
     }
 
